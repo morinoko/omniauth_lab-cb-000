@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
     @auth = facebook_auth
-    
+
     @user = User.find_or_create_by(uid: @auth['uid']) do |user|
       user.name = @auth['info']['name']
       user.email = @auth['info']['email']
