@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def create
+    raise "stop".inspect
     @user = User.find_or_create_by(uid: facebook_auth['uid']) do |user|
       user.name = auth['info']['name']
       user.email = auth['info']['email']
