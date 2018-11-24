@@ -4,4 +4,10 @@ class SessionsController < ApplicationController
 
     end
   end
+
+  private
+
+  def facebook_auth
+    request.env['omniauth.auth']
+  end
 end
