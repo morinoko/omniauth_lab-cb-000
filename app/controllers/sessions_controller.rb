@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
       user.email = @auth['info']['email']
       user.image = @auth['info']['image']
     end
+    
     session[:user_id] = @user.id
 
     render :create
